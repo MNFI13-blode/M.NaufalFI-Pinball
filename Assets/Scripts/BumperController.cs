@@ -11,6 +11,8 @@ public class BumperController : MonoBehaviour
     private Animator animator;
     public AudioManager audioManager;   
     public VFXAudioManager audioManagerInstance;
+    public ScoreManager scoreManager;
+    public float score;
     private void Start()
     {
         render = GetComponent<Renderer>();
@@ -29,6 +31,8 @@ public class BumperController : MonoBehaviour
             audioManager.playSFX(collision.transform.position);
 
             audioManagerInstance.playVFX(collision.transform.position);
+
+            scoreManager.AddScore(score);
         }
     }
 }

@@ -5,10 +5,16 @@ using UnityEngine;
 public class LauncherController : MonoBehaviour
 {
     public Collider Ball;
+    public Color color;
     public KeyCode input;
+    private Renderer render;
     public float maxTimeHold;
     public float maxforce;
     private bool isHold;
+    private void Start()
+    {
+        render = GetComponent<Renderer>();
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.collider == Ball)
@@ -30,6 +36,7 @@ public class LauncherController : MonoBehaviour
         float timehold = 0.0f;
         while (Input.GetKey(input))
         {
+            render.material.color = color;
             force = Mathf.Lerp(0, maxforce, timehold/maxTimeHold);
             yield return new WaitForEndOfFrame();
             timehold += Time.deltaTime;

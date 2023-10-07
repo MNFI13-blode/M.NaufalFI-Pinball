@@ -122,3 +122,5 @@ MonoBehaviour:
   Bola: {fileID: 0}
   off: {fileID: 2100000, guid: 012d06bcdb86b0543b40ffaa46184cfe, type: 2}
   on: {fileID: 2100000, guid: 2e3fc8864655e1b4b8cb4dda2fa7680c, type: 2}
+  score: 10
+  scoreManager: {fileID: 0}

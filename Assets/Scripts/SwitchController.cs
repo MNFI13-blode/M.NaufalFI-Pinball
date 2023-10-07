@@ -14,8 +14,10 @@ public class SwitchController : MonoBehaviour
     public Collider Bola;
     public Material off;
     public Material on;
+    public float score;
     private SwitchState state;
     private Renderer render;
+    public ScoreManager scoreManager;
     private void Start()
     {
         render = GetComponent<Renderer>();
@@ -53,6 +55,7 @@ public class SwitchController : MonoBehaviour
         {
             Set(true);
         }
+        scoreManager.AddScore(score);
     }
     private IEnumerator Blink(int times)
     {
